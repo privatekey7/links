@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://telegram.org; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'">
+<title>База AI-инструментов</title>
+<meta name="description" content="Инструменты из роликов @privatekey_ai: команды установки, ссылки и что учесть.">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@800&display=swap&text=%D0%91%D0%90%D0%97%D0%90AI-%D0%98%D0%9D%D0%A1%D0%A2%D0%A0%D0%A3%D0%9C%D0%95%D0%9D%D0%A2%D0%9E%D0%92%D0%A0%D0%9B%D0%98%D0%9A%D0%9E%D0%92">
+<link rel="stylesheet" href="style.css">
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<script src="app.js" defer></script>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#">База <mark>AI-инструментов</mark></a>
+  <label class="search">
+    <span aria-hidden="true">⌕</span>
+    <input id="q" type="search" placeholder="Найти инструмент или ролик" autocomplete="off" aria-label="Поиск по базе">
+  </label>
+  <span class="meta" id="meta"></span>
+</header>
+<div class="layout">
+  <nav class="side" id="side" aria-label="Разделы"></nav>
+  <main class="main" id="main" aria-live="polite"><p class="state">Загружаю базу…</p></main>
+  <aside class="detail" id="detail"></aside>
+</div>
+</body>
+</html>
