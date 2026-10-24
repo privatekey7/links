@@ -3,6 +3,8 @@
 'use strict';
 
 const tg = window.Telegram?.WebApp;
+// Скрипт Telegram подключён всегда, но вне Telegram platform = 'unknown' и colorScheme всегда 'light'.
+const inTelegram = Boolean(tg?.platform && tg.platform !== 'unknown');
 const NEW_DAYS = 14;
 const STRIP = 8;
 const $ = (id) => document.getElementById(id);
@@ -244,14 +246,31 @@ addEventListener('hashchange', render);
 matchMedia('(min-width: 1000px)').addEventListener('change', render);
 tg?.BackButton?.onClick(back);
 
+// ---------- Тема ----------
+
+// Светлая или тёмная — как у пользователя в Telegram (вне Telegram — как в системе); ?theme=dark|light для проверки.
+// Палитры свои (style.css), рамку окна Telegram красим в тот же фон, чтобы шапка не выбивалась.
+function applyTheme() {
+  const params = new URLSearchParams(location.search);
+  const forced = params.get('theme');
+  const dark = forced ? forced === 'dark'
+    : inTelegram ? tg.colorScheme === 'dark' : matchMedia('(prefers-color-scheme: dark)').matches;
+  const root = document.documentElement;
+  root.dataset.theme = dark ? 'dark' : 'light';
+  const bg = getComputedStyle(root).getPropertyValue('--bg').trim();
+  if (tg?.isVersionAtLeast?.('6.1')) { tg.setHeaderColor(bg); tg.setBackgroundColor(bg); }
+  if (tg?.isVersionAtLeast?.('7.10')) tg.setBottomBarColor(bg);
+}
+
+tg?.onEvent?.('themeChanged', applyTheme);
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
+
 // ---------- Запуск ----------
 
 async function start() {
   tg?.ready();
   tg?.expand();
-  // Тема всегда светлая: красим и рамку окна Telegram, иначе в тёмной теме шапка останется тёмной.
-  if (tg?.isVersionAtLeast?.('6.1')) { tg.setHeaderColor('#ffffff'); tg.setBackgroundColor('#ffffff'); }
-  if (tg?.isVersionAtLeast?.('7.10')) tg.setBottomBarColor('#ffffff');
+  applyTheme();
   try {
     const res = await fetch('data.json', {cache: 'no-cache'});
     if (!res.ok) throw new Error(res.status);
