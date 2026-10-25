@@ -9,7 +9,7 @@ const NEW_DAYS = 14;
 const STRIP = 8;
 const $ = (id) => document.getElementById(id);
 
-const state = {data: null, section: 'all', query: '', favs: new Set(), depth: 0};
+const state = {raw: null, data: null, section: 'all', query: '', favs: new Set(), depth: 0};
 let tools = new Map(), shorts = new Map();
 
 const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'}[c]));
@@ -19,7 +19,7 @@ const plural = (n, one, few, many) => {
   return `${n} ${m10 === 1 && m100 !== 11 ? one : m10 >= 2 && m10 <= 4 && (m100 < 12 || m100 > 14) ? few : many}`;
 };
 const toolsWord = (n) => plural(n, 'инструмент', 'инструмента', 'инструментов');
-const isNew = (date) => (Date.now() - new Date(date).getTime()) / 864e5 <= NEW_DAYS;
+const isNew = (published) => (Date.now() - Release.releaseMs(published)) / 864e5 <= NEW_DAYS;
 const wide = () => matchMedia('(min-width: 1000px)').matches;
 
 // ---------- Маршрут ----------
@@ -265,6 +265,26 @@ function applyTheme() {
 tg?.onEvent?.('themeChanged', applyTheme);
 matchMedia('(prefers-color-scheme: dark)').addEventListener('change', applyTheme);
 
+// ---------- Выход роликов по времени ----------
+
+// Пересобирает видимую часть базы: запланированные ролики и инструменты без вышедших роликов скрыты.
+// Возвращает true, если набор роликов изменился (вышел новый).
+function applyRelease() {
+  const prev = state.data?.shorts.length;
+  state.data = Release.visibleData(state.raw, Date.now());
+  tools = new Map(state.data.tools.map((t) => [t.id, t]));
+  shorts = new Map(state.data.shorts.map((s) => [s.id, s]));
+  $('meta').textContent = `${toolsWord(state.data.tools.length)} · обновлено ${state.raw.updated.split('-').reverse().join('.')}`;
+  return prev !== undefined && prev !== state.data.shorts.length;
+}
+
+function refreshRelease() {
+  if (state.raw && applyRelease()) render();
+}
+
+setInterval(refreshRelease, 60000);
+document.addEventListener('visibilitychange', () => { if (!document.hidden) refreshRelease(); });
+
 // ---------- Запуск ----------
 
 async function start() {
@@ -274,14 +294,12 @@ async function start() {
   try {
     const res = await fetch('data.json', {cache: 'no-cache'});
     if (!res.ok) throw new Error(res.status);
-    state.data = await res.json();
+    state.raw = await res.json();
   } catch {
     $('main').innerHTML = '<p class="state">Не получилось загрузить базу. Проверь интернет и открой ещё раз.</p>';
     return;
   }
-  tools = new Map(state.data.tools.map((t) => [t.id, t]));
-  shorts = new Map(state.data.shorts.map((s) => [s.id, s]));
-  $('meta').textContent = `${toolsWord(state.data.tools.length)} · обновлено ${state.data.updated.split('-').reverse().join('.')}`;
+  applyRelease();
   await loadFavs();
   // ?q=... открывает базу сразу с поиском (ссылка из описания ролика).
   const q = new URLSearchParams(location.search).get('q');
