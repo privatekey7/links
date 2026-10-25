@@ -77,19 +77,20 @@ body.page .detail { display: block; }
 /* Ролики: обложка из самого ролика + «Внутри: …» простыми словами. */
 .strip { display: flex; gap: 10px; padding: 0 16px 4px; overflow-x: auto; scrollbar-width: none; scroll-snap-type: x mandatory; }
 .strip::-webkit-scrollbar { display: none; }
-.short { flex: none; width: 112px; scroll-snap-align: start; }
+/* карточка-кнопка: без этого кнопка ставит содержимое по центру, и короткая карточка сползает вниз (conv-01 рядом с conv-02) */
+.short { flex: none; width: 112px; scroll-snap-align: start; display: flex; flex-direction: column; justify-content: flex-start; align-self: flex-start; }
 .cover { display: block; width: 100%; aspect-ratio: 9 / 16; border-radius: 14px; background: var(--bg2); object-fit: cover; }
 .strip .cover { aspect-ratio: 3 / 4; object-position: top; }
 .cover-text { display: flex; align-items: center; padding: 10px; font: 800 14px/1.05 var(--display); text-transform: uppercase; overflow: hidden; }
-.inside { font-size: 12px; line-height: 1.3; margin-top: 6px; }
+.inside { font-size: 12px; line-height: 1.3; margin-top: 6px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 3; line-clamp: 3; overflow: hidden; }
 .inside span { color: var(--hint); }
 .grid-shorts { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px 12px; padding: 0 16px; }
 .grid-shorts .short { width: auto; }
 .grid-shorts .inside { font-size: 13px; }
 
 /* Разделы чипами на телефоне. */
-.chips { display: flex; gap: 6px; padding: 16px 16px 0; overflow-x: auto; scrollbar-width: none; }
-.chips::-webkit-scrollbar { display: none; }
+/* разделы переносятся на новую строку: прокрутку вбок мышью в узком окне Telegram на ПК не сделать (владелец 25.10.2026) */
+.chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 16px 16px 0; }
 .chip { flex: none; padding: 7px 12px; border-radius: 99px; background: var(--bg2); font-size: 14px; white-space: nowrap; }
 .chip[aria-pressed="true"] { background: var(--pri); color: var(--on-pri); }
 
@@ -156,10 +157,11 @@ body.page .detail { display: block; }
   .chips { display: none; }
   .detail, body.page .detail { display: block; border-left: 1px solid var(--line); overflow-y: auto; }
   .detail .back { display: none; }
-  .strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 14px; overflow: visible; }
-  .strip .short { width: auto; display: flex; gap: 10px; }
+  /* колонка не уже 260 px: в четырёх колонках тексту рядом с обложкой оставалось ~40 px */
+  .strip { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; overflow: visible; }
+  .strip .short { width: auto; display: flex; flex-direction: row; gap: 10px; }
   .strip .cover { width: 100px; flex: none; aspect-ratio: 9 / 16; }
-  .strip .inside { margin-top: 0; font-size: 13px; }
+  .strip .inside { margin-top: 0; font-size: 13px; display: block; -webkit-line-clamp: unset; line-clamp: none; }
   .tools { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 0 16px; }
   .tools .row { border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
   .detail .tools { grid-template-columns: 1fr; }
