@@ -25,7 +25,10 @@
     return {...raw, shorts, tools, sections};
   }
 
-  const api = {releaseMs, isReleased, visibleData};
+  // Рекламная карточка видна по последний день until включительно (по Москве).
+  const isPromoLive = (promo, now) => Boolean(promo?.until) && now < releaseMs(promo.until) + 864e5;
+
+  const api = {releaseMs, isReleased, visibleData, isPromoLive};
   if (typeof module !== 'undefined') module.exports = api;
   else globalThis.Release = api;
 })();

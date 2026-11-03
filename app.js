@@ -89,6 +89,11 @@ const toolGroups = (list, current) => state.data.sections
   .map(([name, ts]) => `<h2 class="group">${esc(name)}</h2><div class="tools">${ts.map((t) => toolRow(t, current)).join('')}</div>`)
   .join('');
 
+// Рекламная карточка из promo.json: на главном экране между роликами и разделами, ведёт сразу на сайт.
+const promoRow = (p) => !p || !Release.isPromoLive(p, Date.now()) ? '' : `<a class="promo" href="${esc(p.url)}" data-link>
+  ${p.logo ? `<span class="logo"><img src="${esc(p.logo)}" alt=""></span>` : ''}<span class="t"><b>${esc(p.title)}</b>
+  <small>${esc(p.sub)}</small></span><em>${esc(p.cta)}</em></a>`;
+
 const chip = (key, label) => `<button class="chip" data-section="${esc(key)}" aria-pressed="${state.section === key}">${esc(label)}</button>`;
 
 function watchLinks(s) {
@@ -140,6 +145,7 @@ function renderMain(r) {
     : '<p class="state">В этом разделе пока пусто.</p>';
   main.innerHTML = `<h2 class="h2">Новые ролики <button data-go="shorts">Все ролики</button></h2>
     <div class="strip">${state.data.shorts.slice(0, STRIP).map(shortCard).join('')}</div>
+    ${promoRow(state.data.promo)}
     <div class="chips" role="group" aria-label="Разделы">${chips}</div>
     ${list.length ? toolGroups(list, current) : empty}`;
 }
