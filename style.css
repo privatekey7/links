@@ -121,7 +121,7 @@ body.page .detail { display: block; }
 .card-head p { margin: 0; color: var(--hint); }
 .what { font-size: 16px; margin: 16px 0 6px; }
 .cmd { display: flex; align-items: center; gap: 8px; background: var(--bg2); border-radius: 12px; padding: 10px 10px 10px 12px; margin: 8px 0; }
-.cmd code { flex: 1; min-width: 0; font: 13px/1.4 var(--mono); overflow-wrap: anywhere; }
+.cmd code { flex: 1; min-width: 0; font: 13px/1.4 var(--mono); overflow-wrap: anywhere; white-space: pre-wrap; }
 .btn-copy { flex: none; border-radius: 9px; padding: 8px 12px; font-weight: 600; font-size: 13px; background: var(--pri); color: var(--on-pri); }
 .hint { color: var(--hint); font-size: 14px; margin: 2px 0 0; }
 .note { display: flex; gap: 8px; background: var(--note); border-radius: 12px; padding: 10px 12px; font-size: 14px; margin-top: 10px; }
