@@ -2,7 +2,7 @@
 
 > Скиллы, MCP-серверы, агенты и утилиты из роликов Telegram-канала https://t.me/privatekey_ai про Claude Code и вайбкодинг: что делает каждый инструмент, команды установки и что учесть. Русский язык.
 
-Обновлено 2026-11-23. Инструментов: 84. Вся база одним файлом: https://privatekey7.github.io/links/llms-full.txt
+Обновлено 2026-11-23. Инструментов: 86. Вся база одним файлом: https://privatekey7.github.io/links/llms-full.txt
 
 ## Как установить инструмент (для ИИ-агента)
 
@@ -34,6 +34,7 @@
 
 ## Агенты
 
+- [Аудит CLAUDE.md: /doctor prompt-audit](https://privatekey7.github.io/links/tools/prompt-audit.md): Flavio Copes считал свою инструкцию на 107 строк нормальной, а команда нашла в ней 10 проблем: пути, которых нет, противоречия и правила под старые модели
 - [Правило для агента-покупателя: 72 яйца больше не придут](https://privatekey7.github.io/links/tools/agent-shopper-rule.md): Мэтт отдал ИИ-агенту список продуктов, оплатил корзину не глядя и получил 72 яйца, которых в списке не было
 - [Операция ИИ-агента на мыши](https://privatekey7.github.io/links/tools/exin-mouse-surgery.md): Тред с видео из лаборатории Exin: агент на Claude Sonnet выбрал генную терапию из 19, нашёл точку укола по трём статьям, вёл иглу и отказался продолжать, когда установка сбилась
 - [CallMe](https://privatekey7.github.io/links/tools/callme.md): Плагин для Claude Code: звонит тебе на телефон или часы, когда задача готова, застряла или нужен твой выбор, и слушает ответ голосом
@@ -47,6 +48,7 @@
 
 ## Безопасность
 
+- [Windows 11 записывает запуск ИИ-агентов: как выключить](https://privatekey7.github.io/links/tools/windows-ai-telemetry.md): В свежей Windows нашёлся список claude.exe, codex.exe, copilot.exe, cursor.exe, antigravity.exe
 - [Запрет на удаление: как уберечь файлы от ИИ-агента](https://privatekey7.github.io/links/tools/agent-no-delete.md): Профессор Чикагского университета дал Claude поправить номера страниц и ушёл обедать
 - [Галочка в ChatGPT: запретить учиться на твоих чатах](https://privatekey7.github.io/links/tools/chatgpt-training-off.md): Одна галочка «Помогите улучшить модель для всех» решает, пойдут ли твои чаты в обучение моделей OpenAI
 - [Проверка: не утекли ли секреты из .claude/settings.local.json](https://privatekey7.github.io/links/tools/settings-local-check.md): Claude Code при «Yes, and don't ask again» может сохранить команду вместе с паролем в файл .claude/settings.local.json

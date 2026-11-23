@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>Аудит CLAUDE.md: /doctor prompt-audit — База AI-инструментов</title>
+<meta name="description" content="Flavio Copes считал свою инструкцию на 107 строк нормальной, а команда нашла в ней 10 проблем: пути, которых нет, противоречия и правила под старые модели">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/prompt-audit.html">
+<link rel="alternate" type="text/markdown" href="prompt-audit.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Агенты</p>
+<h1>Аудит CLAUDE.md: /doctor prompt-audit</h1>
+<p class="meta">Добавлен 2026-11-23 · автор Anthropic, промпт Alex Albert</p>
+<h2>Что делает</h2>
+<p>Flavio Copes считал свою инструкцию на 107 строк нормальной, а команда нашла в ней 10 проблем: пути, которых нет, противоречия и правила под старые модели. Даёт отчёт и diff, сам ничего не меняет, пока не попросишь.</p>
+<h2>Команды и шаги</h2>
+<pre><code>/doctor prompt-audit
+/doctor prompt-audit CLAUDE.md
+Read this entire project and find everything that&#x27;s broken, inconsistent, inefficient, or no longer needed. Fix what you&#x27;re sure about and list the rest for me to review.</code></pre>
+<p>Нужна версия 2.1.283+ (claude --version). Один файл проверяется около минуты. Третье: промпт Alex Albert из Anthropic на каждую новую модель, он правит сразу, поэтому сначала отдельная ветка git.</p>
+<h2>Учти</h2>
+<p>Если в репо есть и CLAUDE.md, и AGENTS.md: Claude Code читает только CLAUDE.md, добавь в него строку @AGENTS.md.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://code.claude.com/docs">Источник</a></li><li><a href="https://youtube.com/shorts/DDg1Ev3F5I0">Ролик: Одна команда нашла 10 ошибок в его CLAUDE.md</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=prompt-audit">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

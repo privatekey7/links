@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>Windows 11 записывает запуск ИИ-агентов: как выключить — База AI-инструментов</title>
+<meta name="description" content="В свежей Windows нашёлся список claude.exe, codex.exe, copilot.exe, cursor.exe, antigravity.exe">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/windows-ai-telemetry.html">
+<link rel="alternate" type="text/markdown" href="windows-ai-telemetry.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Безопасность</p>
+<h1>Windows 11 записывает запуск ИИ-агентов: как выключить</h1>
+<p class="meta">Добавлен 2026-11-23 · автор Xusheng (Binary Ninja)</p>
+<h2>Что делает</h2>
+<p>В свежей Windows нашёлся список claude.exe, codex.exe, copilot.exe, cursor.exe, antigravity.exe. Раз в сутки система собирает отчёт, что из этого ты запускал, и ставит его в очередь на отправку. Промптов и кода там нет.</p>
+<h2>Команды и шаги</h2>
+<pre><code>Get-Process AggregatorHost
+tasklist /m MissionControlAggregator.dll</code></pre>
+<p>Выключить: Параметры → Конфиденциальность и защита → Диагностика и отзывы → «Отправлять необязательные диагностические данные». Команды выше проверяют, работает ли компонент (PowerShell от администратора).</p>
+<h2>Учти</h2>
+<p>Microsoft пока не комментирует.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://xusheng.dev/posts/windows-coding-agent-telemetry/">Источник</a></li><li><a href="https://youtube.com/shorts/djSdIqnvY9M">Ролик: Windows 11 записывает, сидишь ли ты в Claude и Cursor</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=windows-ai-telemetry">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>
