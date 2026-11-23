@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>Удалённые фото в телефоне — База AI-инструментов</title>
+<meta name="description" content="Промпт для Claude Code: через adb находит на Android скрытые папки с миниатюрами удалённых фото, считает, сколько их осталось, и показывает приложения с доступом ко всем файлам">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/deleted-photos-prompt.html">
+<link rel="alternate" type="text/markdown" href="deleted-photos-prompt.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Безопасность</p>
+<h1>Удалённые фото в телефоне</h1>
+<p class="meta">Добавлен 2026-11-09 · автор privatekey7</p>
+<h2>Что делает</h2>
+<p>Промпт для Claude Code: через adb находит на Android скрытые папки с миниатюрами удалённых фото, считает, сколько их осталось, и показывает приложения с доступом ко всем файлам.</p>
+<h2>Команды и шаги</h2>
+<pre><code>Проверь мой Android-телефон на остатки удалённых фото. Телефон подключён по USB с включённой отладкой, работай через adb, только чтение: ничего не удаляй и не копируй на компьютер без моего «да». 1) Найди скрытые папки с миниатюрами: DCIM/.thumbnails, Pictures/.thumbnails и похожие в общем хранилище. Посчитай файлы и объём, покажи самую старую и самую новую дату. 2) Сравни с тем, что сейчас есть в галерее (MediaStore), и скажи, сколько миниатюр осталось от фото, которых в галерее уже нет. 3) Покажи приложения с разрешением «Доступ ко всем файлам» (MANAGE_EXTERNAL_STORAGE) и отметь те, кому оно явно не нужно. 4) Дай команды, чтобы очистить папки миниатюр, и жди моего подтверждения.</code></pre>
+<p>На телефоне включи «Для разработчиков» → «Отладка по USB», подключи кабелем к компьютеру, поставь Android Platform Tools (adb) и запусти Claude Code. Без компьютера: файловый менеджер → показать скрытые файлы → DCIM/.thumbnails.</p>
+<h2>Учти</h2>
+<p>Миниатюры — уменьшенные копии. Для фото, которые остались в галерее, она создаст их заново.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://developer.android.com/training/data-storage/manage-all-files">Источник</a></li><li><a href="https://youtube.com/shorts/3EC-n_OyZOQ">Ролик: Claude нашёл в телефоне 215 тысяч удалённых фото</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=deleted-photos-prompt">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>Запрет на удаление: как уберечь файлы от ИИ-агента — База AI-инструментов</title>
+<meta name="description" content="Профессор Чикагского университета дал Claude поправить номера страниц и ушёл обедать">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/agent-no-delete.html">
+<link rel="alternate" type="text/markdown" href="agent-no-delete.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Безопасность</p>
+<h1>Запрет на удаление: как уберечь файлы от ИИ-агента</h1>
+<p class="meta">Добавлен 2026-11-20 · автор Anthropic (документация), совет с копиями из треда HN</p>
+<h2>Что делает</h2>
+<p>Профессор Чикагского университета дал Claude поправить номера страниц и ушёл обедать. Вернулся: силлабус и конспекты за год удалены, спасла история версий Dropbox. Четыре защиты: запрет rm в настройках, хук, который блокирует удаление, отдельная папка с копиями или git, режим с проверкой действий.</p>
+<h2>Команды и шаги</h2>
+<pre><code>{&quot;permissions&quot;: {&quot;deny&quot;: [&quot;Bash(rm *)&quot;, &quot;Bash(rmdir *)&quot;]}}
+Хук PreToolUse: скрипт выходит с кодом 2 и блокирует действие. Пример protect-files.sh в https://code.claude.com/docs/en/hooks-guide (раздел «Block edits to protected files»)
+Перед любым удалением, перезаписью или правкой файла сделай копию рядом с номером версии.
+Рабочая папка под git или в облаке с историей версий (Dropbox, Google Drive)
+Cowork: отдельная рабочая папка, при запросе на удаление не жми «Allow» не глядя</code></pre>
+<p>Первое вставь в .claude/settings.json: ловит обычный rm, но не bash -c &#x27;rm …&#x27;. Третье строка для CLAUDE.md: это просьба, а не запрет. /rewind не вернёт файл, удалённый командой. Самое надёжное из простого: копия папки или git до запуска агента.</p>
+<h2>Учти</h2>
+<p>Anthropic советует auto mode, но её же сотрудник пишет, что не уверен, спас бы он этот случай.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://code.claude.com/docs/en/permissions">Источник</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=agent-no-delete">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

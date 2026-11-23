@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>Effort в Claude Code — База AI-инструментов</title>
+<meta name="description" content="Сколько агент думает и проверяет на одной и той же модели">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/claude-effort.html">
+<link rel="alternate" type="text/markdown" href="claude-effort.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Модели</p>
+<h1>Effort в Claude Code</h1>
+<p class="meta">Добавлен 2026-11-12 · автор Anthropic</p>
+<h2>Что делает</h2>
+<p>Сколько агент думает и проверяет на одной и той же модели. Пять уровней: low (одна правка без проверок), medium (по умолчанию), high (типы, тесты, линтер), xhigh (долгие сложные задачи), max (только на сессию, склонен загоняться).</p>
+<h2>Команды и шаги</h2>
+<pre><code>/effort high</code></pre>
+<p>Агент ошибся? 1) Поленился: не открыл файл, не прогнал тесты. Подними effort на ступень, модель не трогай. 2) Всё проверил, но путается: ultrathink или /model opusplan, потом Opus. 3) Огромная задача на часы без присмотра: только тогда Fable 5.2.</p>
+<h2>Учти</h2>
+<p>В меню /model effort меняется стрелками влево и вправо. Max не ставь «на всякий случай»: дольше, дороже, код сложнее.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://code.claude.com/docs/en/model-config">Источник</a></li><li><a href="https://www.youtube.com/watch?v=b9FJB3ItK8E">Ролик: Claude Code: какую модель и effort выбрать</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=claude-effort">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

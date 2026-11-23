@@ -1,0 +1,43 @@
+# Версия базы для ИИ-агентов: llms.txt, llms-full.txt, tools/, sitemap.xml.
+# data.json содержит и запланированные ролики; сайт прячет их до выхода, а эти файлы пишутся только по вышедшим.
+# Поэтому после каждого слота выкладки (08:00, 10:30 в выходные, 13:00, 18:00 МСК) файлы пересобираются здесь.
+# Скрипт — копия conveyor/miniapp/agents.py из репозитория конвейера, только стандартная библиотека Python.
+name: agents
+
+on:
+  schedule:
+    - cron: "5 5,10,15 * * *"   # 08:05, 13:05, 18:05 МСК
+    - cron: "35 7 * * *"        # 10:35 МСК
+  push:
+    branches: [main]
+    paths: ["data.json", ".github/agents.py"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: agents
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: python -I .github/agents.py .
+      - name: Commit if changed
+        run: |
+          git add -A llms.txt llms-full.txt sitemap.xml robots.txt tools
+          if git diff --cached --quiet; then
+            echo "без изменений"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898299+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: файлы для агентов по вышедшим роликам"
+          git push

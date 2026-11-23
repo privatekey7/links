@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>ub-mode, режим Дяди Боба — База AI-инструментов</title>
+<meta name="description" content="Скилл для Claude Code от автора «Чистого кода»: сначала тест, потом код, а качество проверяют три его инструмента: сложность функций, повторы кода и тесты на прочность через мутации">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/ub-mode.html">
+<link rel="alternate" type="text/markdown" href="ub-mode.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Скиллы</p>
+<h1>ub-mode, режим Дяди Боба</h1>
+<p class="meta">Добавлен 2026-11-05 · автор Robert C. Martin (Uncle Bob)</p>
+<h2>Что делает</h2>
+<p>Скилл для Claude Code от автора «Чистого кода»: сначала тест, потом код, а качество проверяют три его инструмента: сложность функций, повторы кода и тесты на прочность через мутации.</p>
+<h2>Команды и шаги</h2>
+<pre><code>mkdir -p ~/.claude/skills/ub-mode &amp;&amp; curl -fsSL https://raw.githubusercontent.com/unclebob/ub-mode/master/SKILL.md -o ~/.claude/skills/ub-mode/SKILL.md
+git clone https://github.com/unclebob/crapper &amp;&amp; git clone https://github.com/unclebob/dryer &amp;&amp; git clone https://github.com/unclebob/mutator
+/ub-mode</code></pre>
+<p>Проверки клонируй в одну папку рядом друг с другом: mutator берёт имена функций из ../crapper. Первый запуск каждой сам ставит .venv. Языки: Python, TypeScript, Go, Rust, Java, Clojure.</p>
+<h2>Учти</h2>
+<p>Без трёх проверок скилл остаётся набором правил на словах. Мутации на большом проекте идут долго: начинай с одного файла.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://github.com/unclebob/ub-mode">Источник</a></li><li><a href="https://youtube.com/shorts/LUABNbTkETs">Ролик: Дядя Боб выложил свой режим для Claude Code</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=ub-mode">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

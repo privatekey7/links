@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>hiring-panel — База AI-инструментов</title>
+<meta name="description" content="Скилл Claude Code: робот-фильтр, нанимающий менеджер и пятеро читателей (рекрутер, директор, коллега, конкурент, менеджер) по одному пытаются отклонить резюме, потом скилл собирает претензии и пере…">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/hiring-panel.html">
+<link rel="alternate" type="text/markdown" href="hiring-panel.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Скиллы</p>
+<h1>hiring-panel</h1>
+<p class="meta">Добавлен 2026-11-07 · автор Alex Chen (@nocodealex)</p>
+<h2>Что делает</h2>
+<p>Скилл Claude Code: робот-фильтр, нанимающий менеджер и пятеро читателей (рекрутер, директор, коллега, конкурент, менеджер) по одному пытаются отклонить резюме, потом скилл собирает претензии и переписывает резюме, исправив каждую.</p>
+<h2>Команды и шаги</h2>
+<pre><code>https://github.com/alexyc9381/hiring-panel-skill
+Install this skill, then confirm /hiring-panel works.
+/hiring-panel ~/Documents/resume.pdf  Продакт-менеджер в финтех</code></pre>
+<p>Первую команду вставь в Claude Code, он поставит скилл сам. Потом новый сеанс и вторая команда: путь к резюме и вакансия (лучше вставить текст вакансии целиком). Итог в папке .hiring-panel/: PANEL.md и RESUME-IMPROVED.md.</p>
+<h2>Учти</h2>
+<p>Один прогон это восемь агентов, заметно ест лимит Claude. Цифр и мест работы не выдумывает: где не хватает, ставит [ADD: …] и спрашивает. Автор просит подписывать «/hiring-panel skill by Alex Chen (@nocodealex)».</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://github.com/alexyc9381/hiring-panel-skill">Источник</a></li><li><a href="https://youtube.com/shorts/rTqRKWhABgY">Ролик: Семь Claude пытаются завалить твоё резюме</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=hiring-panel">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

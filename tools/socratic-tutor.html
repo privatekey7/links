@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>Socratic Tutor: ИИ-репетитор без готовых ответов — База AI-инструментов</title>
+<meta name="description" content="Текстовый навык: включает в Claude Code или в обычном чате режим строгого репетитора">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/socratic-tutor.html">
+<link rel="alternate" type="text/markdown" href="socratic-tutor.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Скиллы</p>
+<h1>Socratic Tutor: ИИ-репетитор без готовых ответов</h1>
+<p class="meta">Добавлен 2026-11-16 · автор Jane Street</p>
+<h2>Что делает</h2>
+<p>Текстовый навык: включает в Claude Code или в обычном чате режим строгого репетитора. Сначала 3-5 вопросов, чтобы понять твой уровень, дальше только вопросы по одному, без подсказок и готовых ответов, карта навыков с уровнями от 0 до 5 и итоговая проверка.</p>
+<h2>Команды и шаги</h2>
+<pre><code>git clone https://github.com/janestreet/agent_skills
+Скопируй папку agent_skills/socratic-tutor в ~/.claude/skills/ (Windows: %USERPROFILE%\.claude\skills\)
+teach me &lt;тема&gt;
+В обычном чате: вставь текст из socratic-tutor/SKILL.md, ниже допиши: teach me &lt;тема&gt;
+В диалоге: show progress, harder, easier, just tell me, save state</code></pre>
+<p>Обычный вопрос «что такое X» навык не запускает, он нужен именно для обучения. Команда just tell me отключает режим на один вопрос. Запускающая фраза английская, русский вариант не проверен.</p>
+<h2>Учти</h2>
+<p>Навык простой текст, выигрыш зависит от модели. Часть пользователей на Hacker News пишет, что похожий результат даёт одна строка промпта.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://github.com/janestreet/agent_skills">Источник</a></li><li><a href="https://youtube.com/shorts/5Wsb5mUN4Gs">Ролик: Просишь ИИ объяснить тему, а он гоняет тебя вопросами</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=socratic-tutor">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

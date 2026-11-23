@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>gpu-unlock — База AI-инструментов</title>
+<meta name="description" content="Модуль для Linux: снимает с игровых GeForce программное ограничение тензорных ядер, локальные нейросети читают запрос и рисуют картинки быстрее">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/gpu-unlock.html">
+<link rel="alternate" type="text/markdown" href="gpu-unlock.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Разное</p>
+<h1>gpu-unlock</h1>
+<p class="meta">Добавлен 2026-10-31 · автор Zagitta</p>
+<h2>Что делает</h2>
+<p>Модуль для Linux: снимает с игровых GeForce программное ограничение тензорных ядер, локальные нейросети читают запрос и рисуют картинки быстрее.</p>
+<h2>Команды и шаги</h2>
+<pre><code>git clone https://github.com/Zagitta/gpu-unlock &amp;&amp; cd gpu-unlock &amp;&amp; make install
+gpu_unlock.targets=all</code></pre>
+<p>Первая команда ставит модуль. Вторую строку добавь в параметры ядра в загрузчике (для GRUB: GRUB_CMDLINE_LINUX и sudo grub-mkconfig -o /boot/grub/grub.cfg), потом перезагрузись.</p>
+<h2>Учти</h2>
+<p>Только Linux. Стабильно на RTX 30, RTX 20 и 40 экспериментально, RTX 50 не поддерживается. Скорость печати ответа и игры не меняются. Готовым установщикам для Windows из интернета автор советует не верить.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://github.com/Zagitta/gpu-unlock">Источник</a></li><li><a href="https://youtube.com/shorts/PFpM-Zgsum8">Ролик: Альтман против твоей видеокарты: GeForce считает ИИ вполовину скорости</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=gpu-unlock">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

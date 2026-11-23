@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>Проверка: не утекли ли секреты из .claude/settings.local.json — База AI-инструментов</title>
+<meta name="description" content="Claude Code при «Yes, and don&#x27;t ask again» может сохранить команду вместе с паролем в файл .claude/settings.local.json">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/settings-local-check.html">
+<link rel="alternate" type="text/markdown" href="settings-local-check.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Безопасность</p>
+<h1>Проверка: не утекли ли секреты из .claude/settings.local.json</h1>
+<p class="meta">Добавлен 2026-11-17 · автор Apiiro (Shmulik Cohen и Matan Giladi), шаги проверки по их рекомендациям</p>
+<h2>Что делает</h2>
+<p>Claude Code при «Yes, and don&#x27;t ask again» может сохранить команду вместе с паролем в файл .claude/settings.local.json. Apiiro нашла 1 122 таких файла с секретами в публичных репозиториях GitHub. Три команды показывают, не попал ли такой файл в твой репозиторий.</p>
+<h2>Команды и шаги</h2>
+<pre><code>git ls-files .claude
+git log --all --oneline -- .claude/settings.local.json .claude/settings.json
+grep -nE &#x27;PGPASSWORD=|sshpass -p|mysql .*-p|[Bb]earer |://[^/:@ ]+:[^@ ]+@&#x27; .claude/settings.local.json .claude/settings.json
+git rm --cached .claude/settings.local.json</code></pre>
+<p>Нашёл файл: сначала смени пароль или ключ в самом сервисе, потом чисти файл. История и форки хранят старые копии. Последнюю команду запускай, только если файл закоммичен, и добавь его в .gitignore проекта.</p>
+<h2>Учти</h2>
+<p>Пустой результат не гарантия: секрет без привычного формата grep может не поймать.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://thehackernews.com/2026/11/claude-codes-dont-ask-again-file.html">Источник</a></li><li><a href="https://youtube.com/shorts/Gnf4YZHKjlA">Ролик: «Больше не спрашивать» в Claude Code сливает пароли на GitHub</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=settings-local-check">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

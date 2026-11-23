@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>openskycam — База AI-инструментов</title>
+<meta name="description" content="Открытая камера неба: пишет ночное видео на свой диск, а Claude Code через MCP сам разбирает находки, отсеивает ложные и утром присылает метеоры">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/openskycam.html">
+<link rel="alternate" type="text/markdown" href="openskycam.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Агенты</p>
+<h1>openskycam</h1>
+<p class="meta">Добавлен 2026-11-01 · автор Deibler</p>
+<h2>Что делает</h2>
+<p>Открытая камера неба: пишет ночное видео на свой диск, а Claude Code через MCP сам разбирает находки, отсеивает ложные и утром присылает метеоры.</p>
+<h2>Команды и шаги</h2>
+<pre><code>curl -fsSL https://raw.githubusercontent.com/Deibler/openskycam/main/setup/install.sh | bash</code></pre>
+<p>Команда скачает openskycam в ~/openskycam и запустит пошаговую настройку. Ответы сохраняются в .env, настройку можно прервать и продолжить командой npm run setup.</p>
+<h2>Учти</h2>
+<p>Нужны RTSP-камера, Raspberry Pi рядом с ней, компьютер с большим диском и аккаунт Cloudflare со своим доменом. Первый вход в Cloudflare, туннель и ключи API делаешь руками.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://github.com/Deibler/openskycam">Источник</a></li><li><a href="https://youtube.com/shorts/AUUyvQ59wOc">Ролик: Пока ты спишь, Claude смотрит в небо и ловит метеоры</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=openskycam">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>PhoneBox: старый Android как панель для компьютера — База AI-инструментов</title>
+<meta name="description" content="Старый Android-телефон у клавиатуры показывает нагрузку компьютера, музыку, лимиты Claude и Codex и сессии Claude Code">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/phonebox.html">
+<link rel="alternate" type="text/markdown" href="phonebox.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Разное</p>
+<h1>PhoneBox: старый Android как панель для компьютера</h1>
+<p class="meta">Добавлен 2026-11-19 · автор Ersin KOÇ (ersinkoc)</p>
+<h2>Что делает</h2>
+<p>Старый Android-телефон у клавиатуры показывает нагрузку компьютера, музыку, лимиты Claude и Codex и сессии Claude Code. Когда Claude Code просит разрешение, на телефоне кнопки «Разрешить» и «Отклонить». Больше сотни виджетов, редактор в браузере, USB или Wi‑Fi, без облака.</p>
+<h2>Команды и шаги</h2>
+<pre><code>irm https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.ps1 | iex
+curl -fsSL https://raw.githubusercontent.com/ersinkoc/phonebox/main/setup.sh | bash
+Телефон: включи «Отладку по USB» и подключи кабель (приложение поставится само) или поставь APK из https://github.com/ersinkoc/phonebox/releases/latest и сопряги по Wi‑Fi через QR-код
+Кнопки разрешений: Settings → General → Claude Code permission prompts → Install hook</code></pre>
+<p>Первая команда для Windows (PowerShell), вторая для Linux и Mac. Нужен Android 7+. Настройки панели: http://127.0.0.1:8765 на компьютере. Агент для Windows пока без подписи, SmartScreen может предупредить. Русская инструкция: https://github.com/ersinkoc/phonebox/blob/main/docs/README.ru.md</p>
+<h2>Учти</h2>
+<p>Проекту 10 дней, релизы выходят по несколько в день. Лимит Claude читается через недокументированный адрес Anthropic и может перестать работать. Не путать с phonebox.dev (другой продукт).</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://github.com/ersinkoc/phonebox">Источник</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=phonebox">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

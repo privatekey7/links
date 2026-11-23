@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>Проверка на бэкдор svc-telemetry — База AI-инструментов</title>
+<meta name="description" content="Одна команда показывает, задел ли тебя подменённый Claude Code 2.1.312 и 2.1.313 из магазина Cursor (29.10.2026)">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/svc-telemetry-check.html">
+<link rel="alternate" type="text/markdown" href="svc-telemetry-check.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Безопасность</p>
+<h1>Проверка на бэкдор svc-telemetry</h1>
+<p class="meta">Добавлен 2026-11-03 · автор Cursor</p>
+<h2>Что делает</h2>
+<p>Одна команда показывает, задел ли тебя подменённый Claude Code 2.1.312 и 2.1.313 из магазина Cursor (29.10.2026).</p>
+<h2>Команды и шаги</h2>
+<pre><code>grep -qs svc-telemetry ~/.ssh/authorized_keys &amp;&amp; echo &quot;svc-telemetry key found&quot; || echo &quot;No key found; machine not impacted&quot;
+$files = &quot;$HOME\.ssh\authorized_keys&quot;, &quot;C:\ProgramData\ssh\administrators_authorized_keys&quot; | Where-Object { Test-Path $_ }
+if ($files -and (Select-String svc-telemetry $files)) { &quot;svc-telemetry key found&quot; } else { &quot;No key found; machine not impacted&quot; }</code></pre>
+<p>Первая команда для Mac (Терминал), вторая для Windows (PowerShell). «svc-telemetry key found» значит, задело: скачай скрипт очистки со страницы Cursor и смени пароли и токены с другого компьютера.</p>
+<h2>Учти</h2>
+<p>Удалить расширение мало: скрипты автозапуска остаются. Задело только тех, кто ставил или обновлял расширение в Cursor 29.10.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://cursor.com/blog/claude-code-extension-security-notice">Источник</a></li><li><a href="https://youtube.com/shorts/erivEU55LD4">Ролик: Claude Code в магазине Cursor подменили: проверь компьютер одной командой</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=svc-telemetry-check">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

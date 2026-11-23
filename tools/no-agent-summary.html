@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>no-agent-summary — База AI-инструментов</title>
+<meta name="description" content="Заплатка против строчки статуса фоновых агентов Claude Code: она тайком съедает около 16% лимита">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/no-agent-summary.html">
+<link rel="alternate" type="text/markdown" href="no-agent-summary.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Разное</p>
+<h1>no-agent-summary</h1>
+<p class="meta">Добавлен 2026-11-01 · автор Flamerix AI</p>
+<h2>Что делает</h2>
+<p>Заплатка против строчки статуса фоновых агентов Claude Code: она тайком съедает около 16% лимита. Плюс как снять свой замер расхода.</p>
+<h2>Команды и шаги</h2>
+<pre><code>curl -fsSL https://gist.githubusercontent.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce/raw/no-agent-summary.js -o ~/.local/share/no-agent-summary.js
+claude daemon stop --any
+BUN_OPTIONS=&quot;${BUN_OPTIONS:+$BUN_OPTIONS }--preload=$HOME/.local/share/no-agent-summary.js&quot; claude
+npx ccusage daily</code></pre>
+<p>Первые три строки ставят заплатку и запускают Claude Code с ней. Последняя показывает твой расход по дням, но эту строчку статуса не видит: её видно только в экспорте OpenTelemetry.</p>
+<h2>Учти</h2>
+<p>Неофициально, только Linux и Mac. Любое обновление Claude Code может тихо её снять, проверяй после обновлений. Без заплатки помогает меньше фоновых агентов и подагентов и почаще новая сессия.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce">Источник</a></li><li><a href="https://youtube.com/shorts/XQC4AC5uvBM">Ролик: Кто ворует твой лимит Claude Code: три подозреваемых</a></li><li><a href="https://youtube.com/shorts/KlWLtYg0z4w">Ролик: Claude Code тратит пятую часть лимита на строчку статуса</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=no-agent-summary">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>
