@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>SkillSpector: сканер скиллов от NVIDIA — База AI-инструментов</title>
+<meta name="description" content="Исследование 31 тысячи скиллов: в 26 % уязвимости, у 5,2 % признаки злого умысла">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/skillspector.html">
+<link rel="alternate" type="text/markdown" href="skillspector.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Безопасность</p>
+<h1>SkillSpector: сканер скиллов от NVIDIA</h1>
+<p class="meta">Добавлен 2026-11-24 · автор NVIDIA</p>
+<h2>Что делает</h2>
+<p>Исследование 31 тысячи скиллов: в 26 % уязвимости, у 5,2 % признаки злого умысла. Сканер до установки ищет скрытые команды, кражу токенов и отправку данных наружу. Оценка: 0–20 SAFE, 21–50 CAUTION, 51–100 DO NOT INSTALL.</p>
+<h2>Команды и шаги</h2>
+<pre><code>uv tool install --python 3.13 git+https://github.com/NVIDIA/skillspector.git
+skillspector scan https://github.com/&lt;автор&gt;/&lt;скилл&gt;
+skillspector scan https://github.com/&lt;автор&gt;/&lt;скилл&gt; --no-llm</code></pre>
+<p>Нужен uv. --no-llm проверяет без ключей и модели. Красные флаги и без сканера: «скачай и запусти», «вставь команду в терминал», архив с паролем.</p>
+<h2>Учти</h2>
+<p>Красный свет это датчик дыма, а не приговор: бывает, ругается на безобидные слова. Открой код и посмотри, куда уходят данные.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://github.com/NVIDIA/SkillSpector">Источник</a></li><li><a href="https://youtube.com/shorts/zLgskttysZk">Ролик: Каждый 20-й скилл для ИИ-агентов похож на вредоносный</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=skillspector">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

@@ -2,7 +2,7 @@
 
 > Скиллы, MCP-серверы, агенты и утилиты из роликов Telegram-канала https://t.me/privatekey_ai про Claude Code и вайбкодинг: что делает каждый инструмент, команды установки и что учесть. Русский язык.
 
-Обновлено 2026-11-23. Инструментов: 86. Вся база одним файлом: https://privatekey7.github.io/links/llms-full.txt
+Обновлено 2026-11-24. Инструментов: 89. Вся база одним файлом: https://privatekey7.github.io/links/llms-full.txt
 
 ## Как установить инструмент (для ИИ-агента)
 
@@ -48,6 +48,8 @@
 
 ## Безопасность
 
+- [Досье ChatGPT: проверить и почистить память](https://privatekey7.github.io/links/tools/chatgpt-memory-check.md): Почти все записи в памяти ChatGPT заводит сам, без твоей просьбы: возраст, доход, город, цели
+- [SkillSpector: сканер скиллов от NVIDIA](https://privatekey7.github.io/links/tools/skillspector.md): Исследование 31 тысячи скиллов: в 26 % уязвимости, у 5,2 % признаки злого умысла
 - [Windows 11 записывает запуск ИИ-агентов: как выключить](https://privatekey7.github.io/links/tools/windows-ai-telemetry.md): В свежей Windows нашёлся список claude.exe, codex.exe, copilot.exe, cursor.exe, antigravity.exe
 - [Запрет на удаление: как уберечь файлы от ИИ-агента](https://privatekey7.github.io/links/tools/agent-no-delete.md): Профессор Чикагского университета дал Claude поправить номера страниц и ушёл обедать
 - [Галочка в ChatGPT: запретить учиться на твоих чатах](https://privatekey7.github.io/links/tools/chatgpt-training-off.md): Одна галочка «Помогите улучшить модель для всех» решает, пойдут ли твои чаты в обучение моделей OpenAI
@@ -66,6 +68,7 @@
 
 ## Модели
 
+- [Бесплатный сброс лимита Claude (до 11.12)](https://privatekey7.github.io/links/tools/claude-limit-reset.md): Всем на Pro, Max, Ultra и Team раздали один полный сброс лимитов по всем моделям
 - [Effort в Claude Code](https://privatekey7.github.io/links/tools/claude-effort.md): Сколько агент думает и проверяет на одной и той же модели
 - [opusplan](https://privatekey7.github.io/links/tools/claude-opusplan.md): Режим Claude Code: в режиме плана думает Opus и пишет пошаговый план, а код по утверждённому плану пишет Sonnet, вдвое дешевле
 - [ultrathink](https://privatekey7.github.io/links/tools/claude-ultrathink.md): Слово в любом месте промпта: этот один ответ Claude Code думает на xhigh, со следующего сообщения effort как был
