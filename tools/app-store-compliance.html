@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self'">
+<title>App Store Compliance: проверка до отправки — База AI-инструментов</title>
+<meta name="description" content="В 2025 Apple отклонила 2 млн заявок из 9,1 млн">
+<link rel="canonical" href="https://privatekey7.github.io/links/tools/app-store-compliance.html">
+<link rel="alternate" type="text/markdown" href="app-store-compliance.md">
+<link rel="stylesheet" href="../page.css">
+</head>
+<body>
+<main class="card">
+<p class="crumbs"><a href="../">База AI-инструментов</a> · Скиллы</p>
+<h1>App Store Compliance: проверка до отправки</h1>
+<p class="meta">Добавлен 2026-11-25 · автор mjmirza</p>
+<h2>Что делает</h2>
+<p>В 2025 Apple отклонила 2 млн заявок из 9,1 млн. Скрипт собрал причины отказов, проверяет проект до отправки и не даёт выпустить сборку с ошибкой. BLOCKED: чинишь каждую [CRITICAL] по строке fix. и запускаешь снова; CLEAR: проходишь чек-лист docs/PRE-SUBMISSION-CHECKLIST.md.</p>
+<h2>Команды и шаги</h2>
+<pre><code>git clone https://github.com/mjmirza/app-store-compliance ~/repositories/app-store-compliance
+bash ~/repositories/app-store-compliance/agent-os/hooks/app-store-compliance-guard.sh &quot;/путь/к/приложению&quot;
+bash ~/repositories/app-store-compliance/scripts/install.sh</code></pre>
+<p>Первые две: разовая проверка (git и bash, на Windows Git Bash). Третья ставит насовсем в Claude Code, дальше /app-store-audit.</p>
+<h2>Учти</h2>
+<p>Валится большинство на двух вещах: рабочий демо-аккаунт для проверяющего и форма приватности, которая совпадает с тем, что реально делают приложение и все SDK.</p>
+<h2>Ссылки</h2>
+<ul><li><a href="https://github.com/mjmirza/app-store-compliance">Источник</a></li><li><a href="https://youtube.com/shorts/R7z3LNs64BI">Ролик: Apple пачками отклоняет вайбкод. Файл знает 117 причин</a></li><li><a href="https://t.me/privatekey_ai_bot/base?startapp=app-store-compliance">Открыть в Telegram</a></li></ul>
+<p class="channel">Новые инструменты с каждым роликом: <a href="https://t.me/privatekey_ai">@privatekey_ai</a></p>
+</main>
+</body>
+</html>

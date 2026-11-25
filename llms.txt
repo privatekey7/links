@@ -2,7 +2,7 @@
 
 > Скиллы, MCP-серверы, агенты и утилиты из роликов Telegram-канала https://t.me/privatekey_ai про Claude Code и вайбкодинг: что делает каждый инструмент, команды установки и что учесть. Русский язык.
 
-Обновлено 2026-11-24. Инструментов: 89. Вся база одним файлом: https://privatekey7.github.io/links/llms-full.txt
+Обновлено 2026-11-25. Инструментов: 91. Вся база одним файлом: https://privatekey7.github.io/links/llms-full.txt
 
 ## Как установить инструмент (для ИИ-агента)
 
@@ -15,6 +15,7 @@
 
 ## Скиллы
 
+- [App Store Compliance: проверка до отправки](https://privatekey7.github.io/links/tools/app-store-compliance.md): В 2025 Apple отклонила 2 млн заявок из 9,1 млн
 - [Modern Web Guidance: агент пишет современный веб-код](https://privatekey7.github.io/links/tools/modern-web-guidance.md): Навык для кодовых агентов: когда агент пишет веб-код, он подтягивает актуальные приёмы платформы вместо старого JavaScript
 - [Socratic Tutor: ИИ-репетитор без готовых ответов](https://privatekey7.github.io/links/tools/socratic-tutor.md): Текстовый навык: включает в Claude Code или в обычном чате режим строгого репетитора
 - [geo-sleuth](https://privatekey7.github.io/links/tools/geo-sleuth.md): Скилл для Claude Code, Codex, Cursor и Gemini CLI: по фото находит точку съёмки по горам, мостам, теням и спутниковым снимкам и показывает доказательство на карте
@@ -34,6 +35,7 @@
 
 ## Агенты
 
+- [Code Mode в Claude Code](https://privatekey7.github.io/links/tools/claude-code-mode.md): Вместо десятка шагов по одному Claude сразу пишет маленький скрипт и гоняет всё разом
 - [Аудит CLAUDE.md: /doctor prompt-audit](https://privatekey7.github.io/links/tools/prompt-audit.md): Flavio Copes считал свою инструкцию на 107 строк нормальной, а команда нашла в ней 10 проблем: пути, которых нет, противоречия и правила под старые модели
 - [Правило для агента-покупателя: 72 яйца больше не придут](https://privatekey7.github.io/links/tools/agent-shopper-rule.md): Мэтт отдал ИИ-агенту список продуктов, оплатил корзину не глядя и получил 72 яйца, которых в списке не было
 - [Операция ИИ-агента на мыши](https://privatekey7.github.io/links/tools/exin-mouse-surgery.md): Тред с видео из лаборатории Exin: агент на Claude Sonnet выбрал генную терапию из 19, нашёл точку укола по трём статьям, вёл иглу и отказался продолжать, когда установка сбилась
